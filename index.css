@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #050b0b;
+  --bg-grid: #0d1a1a;
+  --primary-cyan: #00f2ff;
+  --primary-green: #00ff9d;
+  --primary-red: #ff4d4d;
+  --primary-yellow: #ffeb3b;
+  --text-muted: #668383;
+  --text-main: #e0f2f2;
+  --border-color: #1a2e2e;
+  --card-bg: rgba(10, 21, 21, 0.8);
+  --row-bg: rgba(15, 28, 28, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  background-image: 
+    linear-gradient(var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+  background-size: 45px 45px;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+#root {
+  width: 100%;
+  max-width: 900px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Header */
+.terminal-header {
+  text-align: left;
+}
+
+.terminal-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.terminal-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--primary-cyan);
+  opacity: 0.8;
+}
+
+.terminal-title {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.terminal-title .highlight {
+  color: var(--primary-cyan);
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.terminal-divider {
+  height: 1px;
+  background: var(--border-color);
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Stats */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+.stat-card {
+  background: var(--card-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.stat-value.cyan {
+  color: var(--primary-cyan);
+}
+
+/* Add Student Form */
+.form-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.form-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-header .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--primary-cyan);
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 5px var(--primary-cyan);
+}
+
+.add-student-form-horizontal {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 100px;
+  gap: 20px;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #1a2e2e;
+  padding: 10px 0;
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-cyan);
+}
+
+.add-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary-cyan);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-align: right;
+  transition: opacity 0.2s;
+}
+
+.add-btn:hover {
+  opacity: 0.8;
+}
+
+/* Table */
+.table-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.table-header-info {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-header-info .title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+.table-header-info .entries {
+  font-size: 11px;
+  color: var(--primary-cyan);
+}
+
+.terminal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.terminal-table th {
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.student-row-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.student-row-item td {
+  padding: 15px 20px;
+  font-size: 14px;
+}
+
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-indicator {
+  width: 3px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+}
+
+.status-pass .status-indicator {
+  background: var(--primary-green);
+  box-shadow: 2px 0 10px rgba(0, 255, 157, 0.3);
+}
+
+.status-fail .status-indicator {
+  background: var(--primary-red);
+  box-shadow: 2px 0 10px rgba(255, 77, 77, 0.3);
+}
+
+.student-row-item {
+  position: relative;
+}
+
+.td-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.td-score .score-display {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-yellow);
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chip-pass {
+  background: rgba(0, 255, 157, 0.1);
+  color: var(--primary-green);
+  border: 1px solid rgba(0, 255, 157, 0.3);
+}
+
+.chip-fail {
+  background: rgba(255, 77, 77, 0.1);
+  color: var(--primary-red);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+.status-chip .dot {
+  font-size: 10px;
+}
+
+.update-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.update-controls input {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  padding: 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.save-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: var(--text-muted);
+}
+
+.footer-terminal {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+.error-text {
+  padding: 0 20px 10px;
+  color: var(--primary-red);
+  font-size: 12px;
+}
+
+.empty-row {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 40px !important;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
